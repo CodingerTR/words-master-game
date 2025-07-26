@@ -1,0 +1,412 @@
+/*@font-face {
+    font-family: fontName;
+    src: url(".tff file");
+}
+
+KELİMELER
+font-family : "Cabin", sans-serif
+
+PUAN
+font-family : "Signika Negative", sans-serif
+
+
+
+*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #000cb5;
+    box-sizing: border-box;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+
+#start{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(45deg, #5400b5, #2700d6, #8500b5, #eec11c);
+    animation: color 12s ease-in-out infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+.ad{
+    font-size: 80%;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: yellow;
+    font-style: italic;
+}
+
+.ad span{
+    font-family: "Yanone Kaffeesatz", sans-serif !important;
+    font-size: 150%;
+    font-style: light;
+    color: white;
+    font-style: normal;
+}
+
+#start .classes{
+    width: 20%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#start .classes div{
+    width: 80%;
+    height: 15%;
+    font-family: "Seymour One", sans-serif;
+    font-weight: 400;
+    font-size: 140%;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid white;
+    color: yellow;
+    box-shadow: 0px 10px 20px 10px rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    animation: border 12s ease-in-out infinite;
+}
+
+@keyframes border{
+    0%{
+        box-shadow: 0px 10px 20px 10px rgba(255, 255, 255, 0.19);
+    }
+    50%{
+        box-shadow: 0px 10px 20px 10px rgba(255, 247, 0, 0.2);
+    }
+    100%{
+        box-shadow: 0px 10px 20px 10px rgba(255, 255, 255, 0.19);
+    }
+}
+
+
+
+
+.game{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.animation{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: black;
+    font-family: "Cabin", sans-serif;
+}
+
+.blackbg{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.645);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.words{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-answer{
+    height: 3%;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Cabin", sans-serif;
+}
+.wordsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: auto;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    border: 1px solid white;
+    
+}
+.word{
+    width: 9%;
+    height: 9%;
+    background-color: rgb(230, 230, 230);
+    margin: 5px;
+    box-shadow: 0px 4px 10px 4px rgba(0,0,0,.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.word-on-screen{
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    width: 30%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: "Cabin", sans-serif;
+}
+.result{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 3.5rem;
+    font-family: "Signika Negative", sans-serif;
+}
+@media screen and (min-width: 1900px) {
+    .result{
+      font-size: 6rem;
+    }
+  }
+.result div{
+    color: white;
+}
+.result #point, #true, #false{
+    color: #eed51c !important;
+}
+.result .point{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.validate{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.validate span{
+    font-family: "Signika Negative", sans-serif;
+    color: rgb(255, 238, 0);
+    font-weight: bolder;
+}
+.validate form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+}
+.validate form input{
+    width: 40%;
+    height: 3%;
+    margin: 3%;
+    padding: 15px;
+    font-family: "Cabin", sans-serif;
+    font-size: 17px;
+    background-color: unset;
+    border: 2px solid white;
+    color: white;
+}
+.validate form input::placeholder {
+    color: rgb(255, 246, 127);
+    opacity: 1;
+    font-style: italic;
+  }
+  
+.validate button{
+    width: 17%;
+    height: 12%;
+    font-family: "Signika Negative", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border: 2px solid rgb(255, 242, 0);
+    background: linear-gradient(90deg, #1c23fe, #2700d6, #8500b5, #eec11c);
+    animation: color 6s ease-in-out infinite;
+    background-size: 300% 300%;
+    box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.19);
+
+}
+@media screen and (min-width: 1900px) {
+    .validate, .validate form input{
+      font-size: 2rem;
+    }
+    .validate form input{
+        height: 6%;
+    }
+  }
+
+
+
+.customize{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.customize span#warning{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 60%;
+    color: white;
+    font-style: italic;
+    font-family: "Signika Negative", "sans-serif";
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+
+.customize .words-table{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    overflow: auto;
+    margin-bottom: 20px;
+
+}
+
+.customize .class-label{
+    font-size: 1.5rem;
+    width: 60%;
+    padding: 15px;
+    color: #000cb5;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Signika Negative", "sans-serif";
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 1900px) {
+    .customize .words-table{
+        font-size: 2.5rem;
+    }
+    .customize span#warning{
+        font-size: 3rem;
+    }
+    .customize .class-label{
+        font-size: 3rem;
+        padding: 30px;
+
+    }
+}
+
+
+.customize .words-table .word-row{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-family: "Cabin", sans-serif;
+}
+.customize .words-table .word-row div{
+    border: 1px solid white;
+    width: 100%;
+    padding: 1%;
+}
+.customize .words-table .word-row .word-meaning{
+    color: rgb(255, 242, 0) !important;
+}
+
+.new-input{
+    width: 90%;
+    border: 0;
+    padding: 5px;
+    font-size: 1rem;
+    font-family: "Cabin", sans-serif;
+    color: #00098c;
+}
+
+.add{
+    margin-bottom: 50px;
+    color: #00098c;
+    font-weight: bold;
+    font-family: "Signika Negative", "sans-serif";
+    font-size: 1rem;
+    width: 60%;
+    margin-top: 10px;
+}
+.add span{
+    background-color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.add-word-button{
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: "Cabin", sans-serif;
+    color: #00098c;
+    margin-top: 10px;
+    width: 20%;
+    cursor: pointer;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-answer{
+    width: 20%;
+    display: flex;
+}
+.button-send{
+    background-color: #eec11c;
+    margin-left: 10px;
+    text-align: center;
+    font-family: "Cabin", sans-serif;
+    font-size: 17px;
+    color: #00098c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
