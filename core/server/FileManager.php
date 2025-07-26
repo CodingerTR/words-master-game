@@ -1,7 +1,7 @@
 <?php
 class FileManager{
-    public $username = "aycarodoplu";
-    public $password = "1923Ayca";
+    public $username = "user";
+    public $password = "password";
     public $wordsPath = "../../words.json";
     public $auth;
 
